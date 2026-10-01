@@ -1,5 +1,7 @@
 # RustDesk 自建服务器部署教程
 
+简述：本文是搭建rustdesk中转服务器的笔记，不提供确切方法指引，仅供参考
+
 ## 1. 部署环境
 
 ### 1.1 服务器环境
@@ -29,7 +31,7 @@ sudo mkdir -p /opt/rustdesk
 cd /opt/rustdesk
 ```
 
-###  2.2 下载 RustDesk Server
+### 2.2 下载 RustDesk Server
 
 下载官方 Linux AMD64 压缩包：
 
@@ -511,7 +513,7 @@ journalctl -u rustdesk-hbbr -f
 ### 11.4 检查端口
 
 ```bash
-sudo ss -lntup | grep -E '21115|21116|21117|21118|21119'
+sudo ss -lntup | grep -E '21115|21116|21117'
 ```
 
 ---
@@ -613,7 +615,5 @@ systemd 管理
    │
    └── 无法直接连接 → HBBR Relay
 ```
-
-至此，RustDesk Server 已完成自建部署，并可以同时为 Windows、Android 等客户端提供 ID 服务和中继服务。
 
 
